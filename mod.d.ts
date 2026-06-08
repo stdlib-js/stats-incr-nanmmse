@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,22 +16,30 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
 
-var incrmmse = require( '@stdlib/stats-incr-mmse' );
-var isnan = require( '@stdlib/math-base-assert-is-nan' );
-
-
-// MAIN //
+/**
+* If provided input values, the accumulator function returns an updated mean squared error. If not provided input values, the accumulator function returns the current mean squared error.
+*
+* @param x - input value
+* @param y - input value
+* @returns mean squared error or null
+*/
+type accumulator = ( x?: number, y?: number ) => number | null;
 
 /**
 * Returns an accumulator function which incrementally computes a moving mean squared error, ignoring `NaN` values.
 *
-* @param {PositiveInteger} W - window size
-* @throws {TypeError} must provide a positive integer
-* @returns {Function} accumulator function
+* ## Notes
+*
+* -   The `W` parameter defines the number of values over which to compute the moving mean squared error.
+* -   As `W` values are needed to fill the window buffer, the first `W-1` returned values are calculated from smaller sample sizes. Until the window is full, each returned value is calculated from all provided values.
+*
+* @param W - window size
+* @throws must provide a positive integer
+* @returns accumulator function
 *
 * @example
 * var accumulator = incrnanmmse( 3 );
@@ -60,28 +68,9 @@ var isnan = require( '@stdlib/math-base-assert-is-nan' );
 * m = accumulator();
 * // returns 33.0
 */
-function incrnanmmse( W ) {
-	var mmse;
-	mmse = incrmmse( W );
-	return accumulator;
-
-	/**
-	* If provided input values, the accumulator function returns an updated mean squared error. If not provided input values, the accumulator function returns the current mean squared error.
-	*
-	* @private
-	* @param {number} [x] - input value
-	* @param {number} [y] - input value
-	* @returns {(number|null)} mean squared error or null
-	*/
-	function accumulator( x, y ) {
-		if ( arguments.length === 0 || isnan( x ) || isnan( y ) ) {
-			return mmse();
-		}
-		return mmse( x, y );
-	}
-}
+declare function incrnanmmse( W: number ): accumulator;
 
 
 // EXPORTS //
 
-module.exports = incrnanmmse;
+export = incrnanmmse;
