@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-13)
+## Unreleased (2026-10-11)
 
 <section class="features">
 
@@ -34,6 +34,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`af9514c`](https://github.com/stdlib-js/stdlib/commit/af9514c5d9d3f1dd09a62875d6691dcbe5a50207) - **test:** migrate `stats/incr/nanmmse` to ULP-based assertions [(#15986)](https://github.com/stdlib-js/stdlib/pull/15986) _(by Athan Reines)_
 -   [`a07ad1c`](https://github.com/stdlib-js/stdlib/commit/a07ad1c13b9d2428b8897f47c6c78c6bfb0a235d) - **bench:** refactor to use string interpolation in `stats/incr` [(#11394)](https://github.com/stdlib-js/stdlib/pull/11394) _(by Karan Anand)_
 -   [`33f4c10`](https://github.com/stdlib-js/stdlib/commit/33f4c102ad24d1ac6f3883b8f68e528d74631621) - **feat:** adding `stats/incr/nanmmse` [(#6190)](https://github.com/stdlib-js/stdlib/pull/6190) _(by Sanchay Ketan Sinha, Harsh Yadav, Philipp Burckhardt)_
 
@@ -47,8 +48,9 @@ This release closes the following issue:
 
 ### Contributors
 
-A total of 4 people contributed to this release. Thank you to the following contributors:
+A total of 5 people contributed to this release. Thank you to the following contributors:
 
+-   Athan Reines
 -   Harsh Yadav
 -   Karan Anand
 -   Philipp Burckhardt
